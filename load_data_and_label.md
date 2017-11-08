@@ -10,32 +10,54 @@ https://www.kaggle.com/c/spooky-author-identification
 ####Preprocessing 2nd####
 <hr/>
 
-First, get train data from kaggle page(train.csv)
+Second, label data into one hot encoding such as :
 
-then, split 3 author into each text file(ESP.txt, HPL.txt, MWS.txt)
+ESP = [1 0 0]
+HPL = [0 1 0]
+MWS = [0 0 1]
 
+and save data into pickle format
 
 ```
-import pandas as pd
+def load_data_and_labels_another():
+    """
+    Loads MR polarity data from files, splits the data into words and generates labels.
+    Returns split sentences and labels.
+    """
+    x_text = []
+    y = []
+    one_hot_vector = [0,0,0]
+    labels = {}
+    topics = ['ESP','HPL' , 'MWS']
+    for idx, topic in enumerate(topics):
+        clean_questions = list(open(topic + ".txt", mode = 'rb').readlines())
+        clean_questions = [s.strip() for s in clean_questions]
+        x_text = x_text + clean_questions
+        print (len(x_text))
+        if topic == 'ESP':
+            y = y + [[1,0,0] for _ in clean_questions]
+        elif topic == 'HPL':
+            y = y + [[0,1,0] for _ in clean_questions]
+        elif topic == 'MWS':
+            y = y + [[0,0,1] for _ in clean_questions]        # print labels
 
+    y = np.array(y)
+    print(len(y))
+    return [x_text, y]
 
 if __name__ == "__main__":
 
-    train_df = pd.read_csv("train.csv")
-#    train_df.groupby(['text']) 
-    EAP = train_df[train_df['author']=='EAP']
-    HPL = train_df[train_df['author']=='HPL']
-    MWS = train_df[train_df['author']=='MWS']
-    ESP_str = EAP.text.astype(str)
-    HPL_str = HPL.text.astype(str)
-    MWS_str = MWS.text.astype(str)
-    ESP_str.to_csv("ESP.txt", index=False)
-    HPL_str.to_csv("HPL.txt", index=False)
-    MWS_str.to_csv("MWS.txt", index=False)
+    word_indices = []
+    y = []
+    word_indices, y = load_data_and_labels_another()
+
+    word_index_pickle = open('new_data_pickle', 'wb')
+    pickling = {'x': word_indices, 'y': y}
+    pickle.dump(pickling, word_index_pickle)
 
 ```
 
-from this, you can get three text files
+After this sequence, you can get data(as pickle format) to generate embedding matrix
 
 
 
