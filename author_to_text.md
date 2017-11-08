@@ -1,10 +1,10 @@
 Kaggle Author Identification Competition processed by CNN
-  Share code and discuss insights to identify horror authors from their writings
+Share code and discuss insights to identify horror authors from their writings
 
 https://www.kaggle.com/c/spooky-author-identification
 
 
-Getting Started
+####Getting Started####
 
 First, get train data from kaggle page(train.csv)
 
