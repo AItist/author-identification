@@ -4,6 +4,9 @@ Share code and discuss insights to identify horror authors from their writings
 https://www.kaggle.com/c/spooky-author-identification
 
 
+
+
+
 ####Getting Started####
 
 First, get train data from kaggle page(train.csv)
