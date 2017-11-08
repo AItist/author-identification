@@ -7,10 +7,10 @@ https://www.kaggle.com/c/spooky-author-identification
 
 
 <hr/>
-####Preprocessing 2nd####
+####Preprocessing 3rd####
 <hr/>
 
-Second, label data into one hot encoding such as :
+Third, label data into one hot encoding such as :
 
 ESP = [1 0 0]
 HPL = [0 1 0]
