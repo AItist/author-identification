@@ -7,7 +7,7 @@ https://www.kaggle.com/c/spooky-author-identification
 
 
 <hr/>
-####Preprocessing 1st####
+####Preprocessing 2nd####
 <hr/>
 
 First, get train data from kaggle page(train.csv)
