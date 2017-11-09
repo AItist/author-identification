@@ -22,7 +22,6 @@ import pandas as pd
 if __name__ == "__main__":
 
     train_df = pd.read_csv("train.csv")
-#    train_df.groupby(['text']) 
     EAP = train_df[train_df['author']=='EAP']
     HPL = train_df[train_df['author']=='HPL']
     MWS = train_df[train_df['author']=='MWS']
