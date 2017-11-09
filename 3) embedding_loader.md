@@ -7,7 +7,7 @@ https://www.kaggle.com/c/spooky-author-identification
 
 
 <hr/>
-####Preprocessing 3rd####
+####Preprocessing 3rd-in process....####
 <hr/>
 
 Third, download Glove data from stanford NLP Group
