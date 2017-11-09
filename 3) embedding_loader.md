@@ -10,7 +10,7 @@ https://www.kaggle.com/c/spooky-author-identification
 ####Preprocessing 3rd####
 <hr/>
 
-Third, label data into one hot encoding such as :
+Third, download Glove data from stanford NLP Group
 
 ESP = [1 0 0]
 HPL = [0 1 0]
